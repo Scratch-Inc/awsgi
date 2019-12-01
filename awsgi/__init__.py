@@ -9,11 +9,11 @@ try:
 
     # Convert bytes to str, if required
     def convert_str(s):
-        return s.decode('utf-8') if isinstance(s, bytes) else s
+        return s.decode('shift_jis') if isinstance(s, bytes) else s
 
     # Convert str to bytes, if required
     def convert_byte(b):
-        return b.encode('utf-8', errors='strict') if (
+        return b.encode('shift_jis', errors='strict') if (
             isinstance(b, str)) else b
 except ImportError:
     # Python 2
@@ -25,7 +25,7 @@ except ImportError:
 
     # Convert str to bytes, if required
     def convert_byte(b):
-        return b.encode('utf-8', errors='strict') if (
+        return b.encode('shift_jis', errors='strict') if (
             isinstance(b, (str, unicode))) else b
 
 __all__ = 'response',
